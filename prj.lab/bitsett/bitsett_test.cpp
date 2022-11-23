@@ -3,8 +3,7 @@
 #include <doctest/doctest.h>
 #include <bitsett/bitsett.h>
 #include <iostream>
-
-TEST_CASE("BitsetT<>::Bitset(size)") {
+/*TEST_CASE("BitsetT<>::Bitset(size)") {
     
     Bitsett<uint64_t> b(16);   // <000000000000000>
     for (int i = 0; i < 16; ++i)
@@ -14,8 +13,8 @@ TEST_CASE("BitsetT<>::Bitset(size)") {
     for (int i = 0; i < 1; ++i)
         CHECK_FALSE(b2[i]);
         
-    
-}
+    */
+
 
 
 //int main() { return 0; }

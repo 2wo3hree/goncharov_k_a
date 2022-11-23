@@ -45,7 +45,7 @@ public:
 	
 
 	bool operator==(Bitset& rhs) ;
-	bool operator!=(Bitset& rhs) ; вввввв
+	bool operator!=(Bitset& rhs) ; 
 
 	Bitset operator~() const; //не меняет экземпляр класса
 	

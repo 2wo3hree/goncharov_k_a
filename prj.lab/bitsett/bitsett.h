@@ -166,10 +166,10 @@ public:
 		return result;
 	};
 
-	BitHolder operator[](const int64_t position) {
-		int k = position / one_size;
-		return BitHolder(data_[k], position - one_size * k);
-	};
+	//BitHolder operator[](const int64_t position) {
+	//	int k = position / one_size;
+	//	return BitHolder(data_[k], position - one_size * k);
+//	};
 
 	int64_t size() const {
 		return size_;

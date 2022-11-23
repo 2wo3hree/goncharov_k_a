@@ -1,43 +1,43 @@
+#pragma once
 #ifndef QUEUEP
 #define QUEUEP
-#include <iostream>
-#include <algorithm>
+
+#include <iosfwd>
+#include <string>
+#include <stdexcept>
 #include <vector>
 #include <memory>
 
-
 class QueueP {
-
 private:
-	struct Node
-	{
-		int num;
-		std::unique_ptr<Node> next;
-		Node(int _num, std::unique_ptr<Node> _next);
-	};
-	int size;
-	std::unique_ptr<Node> first;
+    class Node {
+    private:
+        int data = 0;
+        std::unique_ptr<Node> next = nullptr;
+
+    public:
+        Node(int data, std::unique_ptr<Node> next);
+        ~Node() = default;
+        friend class QueueP;
+    };
+
+    std::unique_ptr<Node> head = nullptr;
 
 public:
-	QueueP();
-	QueueP(const int _num);
-	QueueP(const QueueP& que);
-	QueueP(QueueP&& que);
-	~QueueP();
+    QueueP();
+    QueueP(QueueP&) = delete;
+    QueueP(QueueP&&) = default;
 
-	bool is_empty();
-	void push(int _num);
+    void push(const int& data);
+    void pop();
 
-	QueueP& operator = (const QueueP& que);
-	QueueP& operator = (QueueP&& que);
+    bool isEmpty() const;
+    const int& top() const;
 
-	void print();
-
-	int top();
-	void pop();
-
-	//Node operator[] (const int index);
+    QueueP& operator=(QueueP&& other) = default;
+    QueueP& operator=(const QueueP&) = delete;
+    ~QueueP();
 };
-QueueP init();
 
-#endif;
+#endif
+
