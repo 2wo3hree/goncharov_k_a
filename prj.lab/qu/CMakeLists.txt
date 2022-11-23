@@ -1,0 +1,1 @@
+add_executable(qu "../rational/qu.cpp")

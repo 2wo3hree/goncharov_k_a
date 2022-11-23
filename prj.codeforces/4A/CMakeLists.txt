@@ -1,0 +1,1 @@
+add_executable(4A 4A.cpp)
